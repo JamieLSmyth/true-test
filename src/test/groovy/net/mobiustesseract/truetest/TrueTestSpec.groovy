@@ -19,9 +19,20 @@ class TrueTestSpec extends Specification
     def "Should negate parameter"(boolean parameter)
     {
         expect:
-            trueTest.negate(parameter) != parameter
+        trueTest.negate(parameter) == !parameter
 
         where:
-            parameter << [true, false]
+        parameter << [true, false]
+    }
+
+    @Unroll("#featureName when parameter is #parameter")
+    def "Should reverse parameter"(String parameter)
+    {
+
+        expect:
+        trueTest.reverse(parameter) == parameter.reverse()
+
+        where:
+        parameter << ["test", "radar"]
     }
 }

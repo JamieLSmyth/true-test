@@ -3,15 +3,23 @@ package net.mobiustesseract.truetest;
 
 public class TrueTest
 {
-    public boolean negate(boolean bool)
+    public Boolean negate(Boolean bool)
     {
-        if(bool)
+        int val = bool ? 1 : -1;
+        return Math.negateExact(val) == 1 ? true : false;
+    }
+
+    public String reverse(String string)
+    {
+        char[] reversed = new char[string.length()];
+
+        int x = reversed.length;
+        for(char c : string.toCharArray())
         {
-            return false;
+            x--;
+            reversed[x] = c;
         }
-        else
-        {
-            return true;
-        }
+
+        return new String(reversed);
     }
 }

@@ -70,6 +70,7 @@
 							<!--<mutationThreshold>100</mutationThreshold>
 							-->
 							<maxSurviving>0</maxSurviving>
+							<coverageThreshold>0</coverageThreshold>
 						</configuration>
 					</execution>
 				</executions>
@@ -78,6 +79,12 @@
 	</build>
 
 	<dependencies>
+		<!-- Properties based testing framework -->
+		<dependency>
+			<groupId>com.nagternal</groupId>
+			<artifactId>spock-genesis</artifactId>
+			<version>0.6.0</version>
+		</dependency>
 		<!-- Mandatory dependencies for using Spock -->
 		<dependency>
 			<groupId>org.spockframework</groupId>

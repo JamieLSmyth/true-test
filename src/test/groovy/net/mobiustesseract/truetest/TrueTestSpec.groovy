@@ -13,16 +13,17 @@ class TrueTestSpec extends Specification
 
     def setup()
     {
+        Collection test = Mock();
         trueTest = new TrueTest()
     }
 
     @Unroll("#featureName when parameter is #parameter")
     def "Should negate parameter"(Boolean parameter)
     {
-        when:
+        when: "negate is called"
         def result = trueTest.negate(parameter)
 
-        then:
+        then: "result is the opposite of supplied parameter"
         result == !parameter
 
         where:

@@ -62,7 +62,7 @@
 				<version>1.2.0</version>
 				<executions>
 					<execution>
-						<phase>test</phase>
+						<phase>verify</phase>
 						<goals>
 							<goal>mutationCoverage</goal>
 						</goals>
@@ -71,6 +71,9 @@
 							-->
 							<maxSurviving>0</maxSurviving>
 							<coverageThreshold>0</coverageThreshold>
+							<mutators>
+								<mutator>ALL</mutator>
+							</mutators>
 						</configuration>
 					</execution>
 				</executions>
@@ -114,6 +117,20 @@
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-core</artifactId>
 			<version>1.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- cucumber testing framework for groovy -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-groovy</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.5</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
